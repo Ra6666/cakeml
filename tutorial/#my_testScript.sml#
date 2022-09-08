@@ -1,0 +1,13 @@
+load preamble;
+open preamble;
+
+val _ = new_theory "arith_exp_demo";
+
+val _ = Datatype`
+                exp = Num num | Add exp exp | Sub exp exp`;
+
+type_of “Add”;
+
+val sem_def = Define ‘sem (Num n) = n ∧
+                      sem (Add e1 e2) = sem e1 + sem e2 ∧
+                      sem (Sub e1 e2) = sem e1 - sem e2’;

@@ -1,0 +1,13 @@
+fun fac n = if n = 0 then 1 else fac (n-1) * n;
+
+fun main () =
+    let
+    val arg = List.hd (CommandLine.arguments())
+    val n = Option.valOf (Int.fromString arg)
+    in
+    print_int (fac n) ; print "\n"
+    end
+    handle _ =>
+    TextIO.print_err ("usage: " ^ CommandLine.name() ^ " <n>\n");
+
+main ();
