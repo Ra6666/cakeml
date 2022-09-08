@@ -13,7 +13,8 @@ DIRS = $(wildcard */)
 README.md: $(CAKEMLDIR)/developers/readme_gen readmePrefix $(patsubst %,%readmePrefix,$(DIRS)) $(README_SOURCES)
 	$(protect $(CAKEMLDIR)/developers/readme_gen) $(README_SOURCES)
 
-SOLUTIONS = wordfreqProgScript.sml simple_bstScript.sml
+# SOLUTIONS = wordfreqProgScript.sml simple_bstScript.sml
+SOLUTIONS = myProgScript.sml
 
 exercises: $(SOLUTIONS) make_ex
 	./make_ex $(SOLUTIONS)
